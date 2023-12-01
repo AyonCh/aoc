@@ -17,9 +17,9 @@ try:
             if string[i].isnumeric():
                 data[i] = string[i]
 
-        for x in nums:
-            if x in string:
-                data[string.find(x)] = str(nums.index(x)+1)
+            for y in nums:
+                if string.startswith(y, i):
+                    data[i] = str(nums.index(y)+1)
 
         ans1 += int(str(num1) + str(num2))
         ans2 += int(data[min(data)] + data[max(data)])

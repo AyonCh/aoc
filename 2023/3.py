@@ -16,7 +16,7 @@ except:
     maxx, maxy = max(data)
     gear = []
     gears = {}
-    gans = []
+    gans = 0
     for (x, y) in data:
         if data[(x, y)] == ".":
             if yes:
@@ -31,9 +31,9 @@ except:
                 ans.append(int(prev1))
                 for z in gear:
                     if z in gears:
-                        gears[z].append(int(prev))
+                        gears[z].append(int(prev1))
                     else:
-                        gears[z] = [int(prev)]
+                        gears[z] = [int(prev1)]
                 gear = []
             if yes2:
                 ans.append(int(prev))
@@ -95,6 +95,6 @@ except:
                         yes2 = True
     for z in gears:
         if len(gears[z]) > 1:
-            gans.append(gears[z][0]*gears[z][1])
+            gans += gears[z][0] * gears[z][1]
     print(f"\nPart 1: {sum(ans)}")
-    print(f"Part 2: {sum(gans)}")
+    print(f"Part 2: {gans}")

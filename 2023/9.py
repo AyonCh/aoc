@@ -2,7 +2,7 @@ try:
   ans, ans1 = 0, 0
   while True:
     i = list(map(int, input().split(" ")))]
-    values, values1 = [i],[i]
+    values, values1 = [i],[i[::-1]]
     change, change1 = 0, 0
     while True:
       temp = []
@@ -15,8 +15,8 @@ try:
       change += x[-1]
     while True:
       temp = []
-      for x in range(len(values1[-1][::-1]) - 1):
-        temp.append(values1[-1][::-1][x+1] - values1[-1][::-1][x])
+      for x in range(len(values1[-1]) - 1):
+        temp.append(values1[-1][x+1] - values1[-1][x])
       values1.append(temp)
       if len(values1[-1]) == values1[-1].count(0):
         break

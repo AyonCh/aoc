@@ -8,7 +8,7 @@ try:
 
 except:
     idx = 0
-    key = list(coords.keys())[0]
+    key = "AAA"
     while key != "ZZZ":
         dir = instructions[idx % len(instructions)]
         if dir == "R":

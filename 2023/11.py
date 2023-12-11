@@ -1,11 +1,15 @@
 try:
     data = []
+    dat = []
     y = 0
     while True:
         i = input()
+        a = []
         for x in range(len(i)):
+            a.append(i[x])
             if i[x] == "#":
                 data.append([x,y])
+        dat.append(a)
         y += 1
 except:
     ans = 0

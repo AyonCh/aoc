@@ -21,7 +21,7 @@ except:
         if data[(x, y)] == ".":
             if yes:
                 ans.append(int(prev))
-                for z in gear:
+                for z in set(gear):
                     if z in gears:
                         gears[z].append(int(prev))
                     else:
@@ -29,7 +29,7 @@ except:
                 gear = []
             if yes1:
                 ans.append(int(prev1))
-                for z in gear:
+                for z in set(gear):
                     if z in gears:
                         gears[z].append(int(prev1))
                     else:
@@ -37,7 +37,7 @@ except:
                 gear = []
             if yes2:
                 ans.append(int(prev))
-                for z in gear:
+                for z in set(gear):
                     if z in gears:
                         gears[z].append(int(prev))
                     else:

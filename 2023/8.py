@@ -8,7 +8,7 @@ try:
         if i != "":
             coords[i.split(" = ")[0]] = (i.split(" = ")[1][1:-1]).split(", ")
             if i.split(" = ")[0][-1] == "A":
-              a.append(i.split(" = ")[0])
+                a.append(i.split(" = ")[0])
 
 except:
     idx = 0
@@ -25,13 +25,16 @@ except:
         k = x
         j = 0
         while k[-1] != "Z":
-          dir = instructions[j % len(instructions)]
-          if dir == "R":
-            k = coords[k][1]
-          if dir == "L":
-            k = coords[k][0]
-          j += 1
+            dir = instructions[j % len(instructions)]
+            if dir == "R":
+                k = coords[k][1]
+            if dir == "L":
+                k = coords[k][0]
+            j += 1
         idxs.append(j)
-      
+
+    g = 1
+    for x in idxs:
+        g = math.lcm(g, x)
     print(f"\nPart 1: {idx}")
-    print(f"Part 2: {math.lcm(idxs)}")
+    print(f"Part 2: {g}")

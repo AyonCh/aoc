@@ -1,8 +1,8 @@
 try:
     ans, ans1 = 0, 0
     while True:
-        i = list(map(int, input().split(" ")))]
-        values, values1 = [i],[i[::-1]]
+        i = list(map(int, input().split(" ")))
+        values, values1 = [i], [i[::-1]]
         change, change1 = 0, 0
         while True:
             temp = []

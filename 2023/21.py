@@ -9,7 +9,7 @@ for y in range(len(data)):
             start = (y, x)
 q = deque([start])
 steps = 0
-while steps < 6:
+while steps < 64:
     steps += 1
     l = []
     while q:
@@ -23,7 +23,6 @@ while steps < 6:
                 l.append((y+1, x))
             if y > 0 and data[y-1][x] != "#":
                 l.append((y-1, x))
-    print(l)
     if l:
         q = deque(l)
     else:

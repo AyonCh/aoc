@@ -16,16 +16,16 @@ while True:
     l = []
     while q:
         y, x = q.popleft()
-        if y < len(i) - 1 and i[y][x] in "S|7F" and i[y+1][x] != "." and (y+1, x) not in seen:
+        if y < len(i) - 1 and i[y][x] in "S|7F" and i[y+1][x] in "|JL" and (y+1, x) not in seen:
             seen.append((y+1, x))
             l.append((y+1, x))
-        if y > 0 and i[y][x] in "S|JL" and i[y-1][x] != "." and (y-1, x) not in seen:
+        if y > 0 and i[y][x] in "S|JL" and i[y-1][x] in "|7F" and (y-1, x) not in seen:
             seen.append((y-1, x))
             l.append((y-1, x))
-        if x < len(i[0]) - 1 and i[y][x] in "S-LF" and i[y][x+1] != "." and (y, x+1) not in seen:
+        if x < len(i[0]) - 1 and i[y][x] in "S-LF" and i[y][x+1] in "-J7" and (y, x+1) not in seen:
             seen.append((y, x+1))
             l.append((y, x+1))
-        if x > 0 and i[y][x] in "S-J7" and i[y][x-1] != "." and (y, x-1) not in seen:
+        if x > 0 and i[y][x] in "S-J7" and i[y][x-1] in "-LF" and (y, x-1) not in seen:
             seen.append((y, x-1))
             l.append((y, x-1))
     if l:

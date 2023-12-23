@@ -15,16 +15,16 @@ while steps < 64:
     while q:
         y, x = q.popleft()
         if data[y][x] in "S.":
-            if x < len(data[0]) - 1 and data[y][x+1] != "#":
+            if x < len(data[0]) - 1 and data[y][x+1] != "#" and (y, x+1) not in l:
                 l.append((y, x+1))
-            if x > 0 and data[y][x-1] != "#":
+            if x > 0 and data[y][x-1] != "#" and (y, x-1) not in l:
                 l.append((y, x-1))
-            if y < len(data) - 1 and data[y+1][x] != "#":
+            if y < len(data) - 1 and data[y+1][x] != "#" and (y+1, x) not in l:
                 l.append((y+1, x))
-            if y > 0 and data[y-1][x] != "#":
+            if y > 0 and data[y-1][x] != "#" and (y-1, x) not in l:
                 l.append((y-1, x))
     if l:
         q = deque(l)
     else:
         break
-print(f"Part 1: {len(set(q))}")
+print(f"Part 1: {len(q)}")
